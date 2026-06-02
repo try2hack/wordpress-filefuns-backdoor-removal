@@ -1,0 +1,51 @@
+# wp-backdoor-cleaner signatures
+#
+# Lines beginning with FILE: are exact filenames of known webshells from the
+# "filefuns.php" / "BiaoJiOk" campaign. They are used as filename signatures.
+# Content-based regex signatures live inside clean.sh (CONTENT_SIGS) so that
+# renamed copies are also caught.
+#
+# These are indicators of compromise (IOCs), not executable code.
+# Edit freely to extend coverage for your environment.
+
+# --- Known webshell filenames -------------------------------------------------
+FILE:filefuns.php
+FILE:adminfuns.php
+FILE:chtmlfuns.php
+FILE:cjfuns.php
+FILE:classsmtps.php
+FILE:classfuns.php
+FILE:comfunctions.php
+FILE:comdofuns.php
+FILE:connects.php
+FILE:copypaths.php
+FILE:delpaths.php
+FILE:doiconvs.php
+FILE:epinyins.php
+FILE:gdftps.php
+FILE:hinfofuns.php
+FILE:hplfuns.php
+FILE:memberfuns.php
+FILE:moddofuns.php
+FILE:onclickfuns.php
+FILE:phpzipincs.php
+FILE:qfunctions.php
+FILE:qinfofuns.php
+FILE:schallfuns.php
+FILE:tempfuns.php
+FILE:userfuns.php
+FILE:siteheads.php
+FILE:termps.php
+FILE:txets.php
+FILE:thoms.php
+FILE:postnews.php
+FILE:system_log.php
+FILE:inputs.php
+
+# --- Other indicators of compromise (reference) ------------------------------
+# Code watermark (trailing tag) : BiaoJiOk
+# C2 / redirect domain          : yarse.top (random subdomains, e.g. zs896v13.*)
+# Obfuscation tell              : goto + 10+ char random labels
+# Dynamic dangerous calls       : eval(base64_decode(...)), eval(str_rot13(...))
+# Backdoor file extension       : *.phtml placed in deep folders (model/, structure/, property/)
+# Nested duplicate dirs         : .../paste/paste/, .../images/images/images/, .../cgi-bin/cgi-bin/
